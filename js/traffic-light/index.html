@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #666;
+            margin-top: 100px;
+        }
+
+        ul.stop li:nth-child(1) {
+            background-color: red;
+        }
+
+        ul.warn li:nth-child(2) {
+            background-color: yellow;
+        }
+
+        ul.pass li:nth-child(3) {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul');
+        // setTimeout( () => {
+        //     ul.className = 'stop';
+        //     setTimeout(function() {
+        //         ul.className = 'warn'; 
+        //         setTimeout( () => {
+        //             ul.className = 'pass';
+        //             setTimeout( () => {
+        //                 ul.className = 'stop';
+        //             }, 
+        //             2000)
+        //         }, 
+        //         1000)
+        //     }, 
+        //     1000)
+        // }, 
+        // 1000)
+        // // callback hell
+
+        // // ??
+        // // Promise
+
+        // setTimeout (() => {
+        //     // ok
+        //     // 
+        // }, 1000)
+        // // 类
+        // let p = new Promise(function(resolve, reject) {
+        //     setTimeout(() => {
+        //         resolve(); 
+        //         // 异步成功  fulfilled
+        //         // 失败 rejected
+        //         // 处理中  pending
+        //         // 默认 pending 如果调用 resolve  fulfilled
+        //         // 默认 pending 如果调用 reject   rejected
+        //     }, 1000)
+        // })
+        let p = function () {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    resolve();
+                }, 1000);
+            })
+        }
+        setInterval(() => {
+            light();  
+        }, 3000);
+        light();
+        //fulfilled
+        // p指向同一个promise 1s fulfilled then 回调 没有等待1s的结果
+        function light() {
+            p().then(function () {
+            // 第一个灯
+            ul.className = 'stop';
+            // 第二个灯
+            // 涉及到 promise then 的用法
+            // 返回 一个 Promise 可以在后面链式调用 then
+            return p();
+        })
+            .then(function () {
+                ul.className = 'warn';
+                return p();
+            })
+            .then(function () {
+                ul.className = 'pass';
+            })
+        }
+        
+
+        
+
+
+
+
+
+        // .then 的串行结构
+        // rejected
+        p().catch()
+    </script>
+</body>
+
+</html>
