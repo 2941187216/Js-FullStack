@@ -1,0 +1,21 @@
+<script>
+    function buildUrl(url, params) {
+        let parts = [];
+        Object.keys(params).forEach(function (key) {
+            let value = params[key]
+            let part = `${key}=${value}`
+            parts.push(part)
+            console.log(part);
+        })
+        url += '?' + parts.join('&');
+        return url;
+    }
+
+    let url = buildUrl('http://neteasecloudmusicapi.zhaoboy.com/search', {
+        keywords: '海阔天空',
+        type: 'all',
+        query: 'js'
+    })
+
+    console.log(url);
+</script>

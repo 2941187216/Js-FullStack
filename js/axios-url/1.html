@@ -1,0 +1,32 @@
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+
+<script>
+    //http://neteasecloudmusicapi.zhaoboy.com/search?keywords=海阔天空
+    // 1. 原生， 自己手动拼接  ？ 后面的字符串  字符串
+    // 2. axios  ?  变成了一个对象  {}
+    let params = {
+        query: 'js',
+        type: 'all'
+    }
+    params.user = 'xxx';
+    delete params.query;
+
+    // axios 第三方 基于 XMLhttprequest 库
+    // fetch 浏览器原生的 另外一个发请求的api（不是基于XML）
+    axios({
+        method: 'get',
+        url: 'http://neteasecloudmusicapi.zhaoboy.com/search',
+        params: {
+            keywords: '海阔天空'
+        }
+    })
+    .then(function(res) {
+        console.log(res);
+    })
+
+    // 有了url
+    // 有了一个对象
+    // 对象每一项 key value 按照 URL 规则拼接到URL后面
+
+    // 50% 
+</script>
