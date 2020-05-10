@@ -1,20 +1,65 @@
 <script>
+    // 1: key value 编码一下 安全性
+    // 2: 传递数组 非法数据的处理
+    // 3: # 后面的内容不会传输给后端 如果url后面存在# 把#后面的抛弃
+    // 浏览器自动编码 
+    function encode(str) {
+        return encodeURIComponent(str)
+        .replace('%5B','[').replace('%5D',']');
+        
+    } 
     function buildUrl(url, params) {
         let parts = [];
         Object.keys(params).forEach(function (key) {
-            let value = params[key]
-            let part = `${key}=${value}`
-            parts.push(part)
-            console.log(part);
+            let value = params[key];
+
+            if(value === null || typeof value === 'undefined'){
+                return;
+            }
+
+            if(Array.isArray(value)) {
+                key += '[]';
+            } else {
+                value = [value];
+            }
+            // 统一为数组 可以循环
+            // 把 value 里面的每一项追加到 key 后面
+
+            value.forEach(val => {
+                let part = `${encode(key)}=${encode(val)}`
+                parts.push(part);
+                console.log(part);
+            })
+            
+            
         })
-        url += '?' + parts.join('&');
+        console.log(parts);
+        const hashIndex = url.indexOf('?');
+        if (hashIndex !== -1) {
+            const url1 = url.slice(0,hashIndex);
+            url = url1 + '?' + parts.join('&');
+        } else {
+            url += '?' + parts.join('&');
+            }
+        //url += '?' + parts.join('&');
+        // const hashIndex = url.indexOf('#');
+        // // 如果存在返回#所在位置  不在返回 -1
+        // if (hashIndex !== -1) {
+        //     // 找到 # 位置 从 0 ~ # 位置  截取下来
+        //     url = url.slice(0, hashIndex);
+        // }
+
+        
         return url;
     }
 
-    let url = buildUrl('http://neteasecloudmusicapi.zhaoboy.com/search', {
+    let url = buildUrl('http://neteasecloudmusicapi.zhaoboy.com/search?', {
         keywords: '海阔天空',
         type: 'all',
-        query: 'js'
+        query: 'js',
+        a: null,
+        b:undefined,
+        c:[1, 2, 3]
     })
 
     console.log(url);
