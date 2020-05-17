@@ -6,6 +6,10 @@
 .box {
     background-color: blue;
 }
+.box.size{
+    width: 150px;
+    height: 150px;
+}
 
 /* .box.size {
     width: 150px;
@@ -57,6 +61,18 @@
 .box {
     display: inline-block;
 } */
+
+.wrap {
+    position: relative;
+}
+.box {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top: -75px;
+    margin-left: -75px;
+    text-align: center;
+}
 
 
 
