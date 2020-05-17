@@ -1,0 +1,62 @@
+.wrap {
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+}
+.box {
+    background-color: blue;
+}
+
+/* .box.size {
+    width: 150px;
+    height: 150px;
+} */
+
+/* .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .wrap {
+    display: grid;
+}
+.box {
+    align-self: center;
+    justify-self: center;
+} */
+
+/* .wrap {
+    position: relative;
+}
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+/* .wrap {
+    font-size: 0; 
+    line-height: 400px;
+    text-align: center;
+}
+.box {
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: initial;
+    text-align: center;
+} */
+
+/* .wrap {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.box {
+    display: inline-block;
+} */
+
+
+
