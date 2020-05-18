@@ -75,7 +75,7 @@
 } */
 
 /* 第二种 */
-.wrap {
+/* .wrap {
     position: relative;
 }
 .box {
@@ -86,6 +86,14 @@
     left:0;
     margin:auto;
     text-align: center;
+} */
+
+.wrap {
+    position: relative;
 }
-
-
+.box {
+    position: absolute;
+    top:  calc(50% - 75px);
+    left: calc(50% - 75px);
+    text-align: center;
+}
