@@ -25,3 +25,14 @@ Content-Type:
 ## 非简单请求
 - OPTION preflight /api
 - POST /api
+
+## JSONP
+不受跨域限制
+img
+src 
+link
+script
+
+借助了script
+
+1. jsonp 后端给你返回的是什么
