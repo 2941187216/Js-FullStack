@@ -39,3 +39,19 @@ js 怎么就被执行？ 浏览器也要解析
 
 ## 浏览器 匹配css 规则
 按照css选择器从后往前匹配，保障效率
+
+## layout
+display: flex | block | inline-block | grid
+position: 
+float:
+justify-content: center;
+... 
+用这些 对位置产生影响的元素，计算元素的位置信息，算出坐标系里面的（x，y）
+
+## 正常的文档流
+脱离文档流：float: left position
+
+## normal flow
+行内元素(inline-level-box): 水平从左往右一个接着一个布局, 垂直方向默认会以baseline对齐
+块级元素(block-level-box): 垂直方向从上往下一个接着一个布局
+relative 定位：
