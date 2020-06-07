@@ -31,3 +31,9 @@ https://www.w3.org/
   - will-change 是 transform， perspective
   - filter不是 none 或者 will-change 是 filter(only works on Firefox).
   - contain 是 paint (例如: contain: paint;)
+
+  ## layout
+  - normal flow
+  - float
+  - position
+  - flex
