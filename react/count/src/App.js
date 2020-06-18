@@ -20,6 +20,27 @@ class App extends Component {
             count: count - select_number.value*1
         })
     }
+
+    incrementOfOdd = () => {
+        const {select_number} = this.refs;
+        const {count} = this.state;
+        if(count % 2 === 1) {
+            this.setState({
+                count: count + select_number.value*1
+            })
+        }
+       
+    }
+
+    incrementAsync = () => {
+        const {select_number} = this.refs;
+        const {count} = this.state;
+        setTimeout(() => {
+            this.setState({
+                count: count + select_number.value*1
+            })
+        },1000)
+    }
     render() { 
         return ( 
             <div>
