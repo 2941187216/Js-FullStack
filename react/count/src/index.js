@@ -10,5 +10,13 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+store.subscribe(() => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App1 store={ store }/>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+})
 
 

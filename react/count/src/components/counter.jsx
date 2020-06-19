@@ -1,34 +1,32 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    // state={
-    //     count: 0
-    // }
-
+   
     increment = () => {
         const {select_number} = this.refs;
-        // const {count} = this.state;
-        // this.setState({
-        //     count: count + select_number.value*1
-        // })
+        this.props.dispatch({
+            type: 'increment',
+            data: 'select_number.value*1'
+        })
     }
 
     decrement = () => {
         const {select_number} = this.refs;
-        // const {count} = this.state;
-        // this.setState({
-        //     count: count - select_number.value*1
-        // })
+        this.props.dispatch({
+            type: 'decrement',
+            data: 'select_number.value*1'
+        })
     }
 
     incrementOfOdd = () => {
         const {select_number} = this.refs;
-        // const {count} = this.state;
-        // if(count % 2 === 1) {
-        //     this.setState({
-        //         count: count + select_number.value*1
-        //     })
-        // }
+        const {count} = this.props.store.getState();
+        if(count % 2 === 1) {
+            this.props.dispatch({
+                type: 'increment',
+                data: 'select_number.value*1'
+            }) 
+        }
        
     }
 
@@ -44,7 +42,7 @@ class Counter extends Component {
     render() { 
         return ( 
             <div>
-                <span >count is {this.props.store.getState()}</span><br/>
+                <span >count is {this.props.store.getState().count}</span><br/>
                 <select style={{margin:'4px'}} ref="select_number">
                     <option value="1">1</option>
                     <option value="2">2</option>

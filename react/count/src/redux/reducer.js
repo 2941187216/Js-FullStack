@@ -1,5 +1,7 @@
 
-let initState = 10;
+let initState = {
+    count: 0
+};
 
 export default function (preState = initState, action) {
     const { type , data } = action;
