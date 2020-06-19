@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './App';
+import store from './redux/store'
+import App1 from './App1';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App1 store={ store }/>
   </React.StrictMode>,
   document.getElementById('root')
 );
