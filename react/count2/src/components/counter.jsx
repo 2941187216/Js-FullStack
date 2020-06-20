@@ -4,24 +4,28 @@ class Counter extends Component {
    
     increment = () => {
         const {select_number} = this.refs;
-        
+        this.props.increment(select_number.value*1)
     }
 
     decrement = () => {
         const {select_number} = this.refs;
-       
+        this.props.decrement(select_number.value*1)
     }
 
     incrementOfOdd = () => {
         const {select_number} = this.refs;
-       
-       
+        const {count} = this.props;
+        if(count % 2 === 1) {
+            this.props.increment(select_number.value*1)
+        }
     }
 
     incrementAsync = () => {
         const {select_number} = this.refs;
         
-        setTimeout(() => {},1000)
+        setTimeout(() => {
+            this.props.increment(select_number.value*1)
+        },1000)
     }
     render() { 
         return ( 
