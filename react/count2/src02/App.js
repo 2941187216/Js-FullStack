@@ -1,33 +1,50 @@
 import React, { Component } from 'react';
 
-class Counter extends Component {
-   
+class App extends Component {
+    state={
+        count: 0
+    }
+
     increment = () => {
         const {select_number} = this.refs;
-        this.props.increment(select_number.value*1)
+        const {count} = this.state;
+        this.setState({
+            count: count + select_number.value*1
+        })
     }
 
     decrement = () => {
         const {select_number} = this.refs;
-        this.props.decrement(select_number.value*1)
+        const {count} = this.state;
+        this.setState({
+            count: count - select_number.value*1
+        })
     }
 
     incrementOfOdd = () => {
         const {select_number} = this.refs;
-        const {count} = this.props;
+        const {count} = this.state;
         if(count % 2 === 1) {
-            this.props.increment(select_number.value*1)
+            this.setState({
+                count: count + select_number.value*1
+            })
         }
+       
     }
 
     incrementAsync = () => {
         const {select_number} = this.refs;
-        this.props.incrementAsync(select_number.value*1, 1000)
+        const {count} = this.state;
+        setTimeout(() => {
+            this.setState({
+                count: count + select_number.value*1
+            })
+        },1000)
     }
     render() { 
         return ( 
             <div>
-                <span >count is {this.props.count}</span><br/>
+                <span >count is {this.state.count }</span><br/>
                 <select style={{margin:'4px'}} ref="select_number">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -42,4 +59,4 @@ class Counter extends Component {
     }
 }
  
-export default Counter;
+export default App;
