@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import  { Layout, Row, Col  }from 'antd'
 import './util/request.js';
 import './App.css';
+import './index.css'
 
 const store = {
   articleStore
