@@ -155,3 +155,4 @@ console.log('now', store.getState())
 //   render();
 // })
 // // 修改 store 变了，重新渲染
+
