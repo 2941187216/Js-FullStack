@@ -1,0 +1,28 @@
+<script>
+    let r = 'aaaa';
+    let obj = {
+        [r]: 123,
+        'r': 456
+    }
+    console.log(obj, obj[r]);
+    console.log(obj['r'], obj.r);
+    for (let key in obj) {
+        console.log(obj[key])
+    }
+    // 元编程：对编程语言的再编程
+    class myArr {
+        static a = 1;
+        static [Symbol.hasInstance](obj) {
+            return true;
+        }
+
+        push() {
+            console.log('发生了 push, 和原生 push 一样')
+        }
+    }
+    let arr1 = [];
+    let arr = new myArr();
+    console.log(myArr[Symbol.hasInstance])
+    console.log(arr instanceof myArr);
+    console.log(arr1 instanceof myArr)
+</script>

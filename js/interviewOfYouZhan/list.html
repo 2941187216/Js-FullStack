@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li data-uid="1">1
+            <div>123
+                <span>456</span>
+            </div>
+        </li>
+        <li data-uid="2">2
+            <div>123
+                <span>456</span>
+            </div>
+        </li>
+        <li data-uid="3">3
+            <div>123
+                <span>456</span>
+            </div>
+        </li>
+    </ul>
+    <script>
+        // const list = document.querySelectorAll('ul li');
+        // for (let node of list) {
+        //     node.addEventListener('click', () => {
+
+        //     })
+        // }
+        
+        let ul = document.querySelector('ul');
+        ul.addEventListener('click', (event) => {
+            // 之前
+            // <li data-uid=""><div></div><span></span></li>
+            // 处理的就是点击div或者span认为都点中了li
+            const target = event.path.find(x => x.tagName === 'LI' && x.getAttribute('data-uid'))
+            console.log(event.path);
+            let nickName = event.target.textContent;
+            let uid = event.target.getAttribute('data-uid')
+            // 绑定谁，谁就是currentTarget 本例就是整个ul
+            console.log('clicked!!', event.target, event.currentTarget, nickName, uid)
+        })     
+        
+        // 3个li
+        const list1 = document.querySelectorAll('li');
+        // 动态的获取 DOM 节点， 实时的
+        // 3个li
+        const list2 = document.getElementsByTagName('li');
+        // ul.removeChild(list1[0]);
+        // ul.innerHTML = '<li></li>'
+        console.log(list1, list2); 
+    </script>
+</body>
+</html>

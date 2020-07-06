@@ -63,6 +63,18 @@
         })
 
         // 怎么实现一个Promise.all
+
+        // [] instanceof Array
+        function myInstance(obj, Constructor) {
+            let proto = obj.__proto__;
+            if(proto === Constructor.prototype) {
+                return true;
+            }
+            if(proto === null) return false;
+            return myInstance(proto, Constructor);
+        }
+        console.log(myInstance([], Array));
+        console.log(myInstance({}, Object));
     </script>
 </body>
 </html>
