@@ -1,5 +1,6 @@
 import React, { useEffect, useState,useMemo, useCallback} from 'react';
-let arr = [1, 2]
+let arr = [1, 2];
+let set = new Set();
 function Demo() {
     console.log('render')
     const [inputVal, setVal ] = useState('海阔天空')
