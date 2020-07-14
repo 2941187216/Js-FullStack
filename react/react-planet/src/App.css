@@ -1,0 +1,134 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(244, 246, 245);
+}
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('./font/iconfont.eot');
+  src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('./font/iconfont.woff2') format('woff2'),
+      url('./font/iconfont.woff') format('woff'),
+      url('./font/iconfont.ttf') format('truetype'),
+      url('./font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 3rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.header {
+  position: relative;
+}
+
+.title {
+  font-size: 2rem;
+  color: RGB(180, 231, 215);
+  text-align: center;
+  margin: 10px auto;
+  position: relative;
+  /* width:  */
+}
+.header .title .iconfont {
+  position: absolute;
+  right: 0;
+}
+.search {
+  margin-top: 2rem;
+  width: 100%;
+  height: 2rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  line-height: 2.5rem;
+}
+
+.search .search-input {
+  outline-style: none;
+  border: 0;
+  border: 1px solid #ccc; 
+  border-radius: 1.5rem;
+  line-height: 2.5rem;
+  width: 34rem;
+  background-color: rgb(235, 237,236);
+  position: absolute;
+  padding-left: 3rem;
+  
+} 
+
+.search .iconfont {
+  position: absolute;
+  left: .3rem;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  margin-top: 5rem;
+}
+
+.contents .contitem {
+  display: flex;
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 0 0 50%;
+}
+.foot {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  z-index: 100;
+}
+
+.foot {
+  background-color: rgb(254, 254, 254);
+}
+.foot .foot-item1 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.foot .foot-item1 .fitem1-text {
+  margin: .2rem auto;
+}
+
+.foot .foot-item2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.foot .foot-item2 .fitem2-text {
+  margin: .2rem auto;
+}
+
+.foot .foot-item3 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.foot .foot-item3 .fitem3-text {
+  margin: .2rem auto;
+}
+
+.foot .foot-item4 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.foot .foot-item4 .fitem4-text {
+  margin: .2rem auto;
+}
