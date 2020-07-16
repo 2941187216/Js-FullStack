@@ -39,6 +39,17 @@
         - actionTypes 可读性
         - actions 写出来
     - reducer 
+        1. action标准做法
+        - 返回 { type:, payload: } 更新reducer
+        - 状态
+        - 组件里的事件，生命周期等功能 主要是和数据 状态 打交道，归为   Action来做
+        所有的action export function
+        在组件里引入需要的actions
+        - bindActionCreators
+          actions 变成本地调用的函数
+            dispatch
+        - useMemo 缓存函数
+        - connect 中去第二个参数去返回 action
 
     - 数据组件化
         1. connect 高阶返回原组件
@@ -48,3 +59,20 @@
             })(Component)
         2. 创建组件
         3. 状态组件，无状态组件重用方法
+
+    - action
+        from 北京
+        to 南昌
+        两个action 思想的切换
+        修改的本质 redux
+
+    - from to 的复盘
+        1. redux 哲学，编程思想
+        reducers纯函数 返回状态及接受状态的更新
+        那一刻只有一个状态 与之对应，switch case
+    - actions actionTypes 
+        是更新reducer的使者 dispatch(action)
+    
+    - from to 都有独立的reducer函数和action
+    - exchangeFromTo()
+        dispatch getState
