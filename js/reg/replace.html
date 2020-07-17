@@ -1,0 +1,22 @@
+<script>
+    let str = 'my name is {name} , age is {age}';
+    str.replace('{name}', 'leili');
+    let obj = { name: 'lilei', age: 18 }
+    let reg = /\{(\w+)\}/g;
+    let newStr = str.replace(reg, (...arg) => {
+        // () 拿到里面的分组
+        //console.log(arg);
+        let key = arg[1];
+        return obj[key]
+    })
+    console.log(newStr);
+
+    let str2 = '2017-11-11';
+    let reg4 = /^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+    function format(str) {
+        let reg5 = /(\d{4})-(\d{2})-(\d{2})/
+        return str.replace(reg5, '$2-$3.$1')
+    }
+
+    console.log(format(str2))
+</script>
