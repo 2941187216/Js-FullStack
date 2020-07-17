@@ -18,11 +18,6 @@ const users = [{
     theme: '刘达专场',
     line: '---',
     author: '笑叹'
-},{
-    image: d,
-    theme: '刘达专场',
-    line: '---',
-    author: '笑叹'
 }]
 class Contents extends Component {
    
@@ -37,8 +32,10 @@ class Contents extends Component {
                           <div className="contitem3">{user.line}</div>
                           <div className="contitem4">{user.author}</div>
                       </div>
+                      
                   )
-              })}  
+              })} 
+              
             </div>
          );
         
