@@ -1,0 +1,17 @@
+<style>
+    #my {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+    }
+</style>
+<div id="my"></div>
+<script src="./event.js"></script>
+<script>
+    // fastclick 移动端 click 有 300ms 延迟
+    // doubleClick
+    const my = document.getElementById('my');
+    my.addEventListener('tap', function() {
+        console.log('tab')
+    })
+</script>
