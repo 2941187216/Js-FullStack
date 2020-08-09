@@ -1,13 +1,18 @@
 import React from 'react';
 
 import './App.css';
-import { MyComponent } from './demo';
-
+// import { MyComponent } from './demo';
+import {MyContextProvider, MyComponent2} from './demo2'
 function App() {
   return (
-    <div className="App">
-      < MyComponent />
-    </div>
+      
+      
+      <MyContextProvider>
+        <div className="App">
+        < MyComponent2 />
+      </div>
+      </MyContextProvider>
+
   );
 }
 
