@@ -1,0 +1,17 @@
+{
+  "name": "email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "_nodemailer@6.4.11@nodemailer": "^6.4.11",
+    "nodemailer": "^6.4.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

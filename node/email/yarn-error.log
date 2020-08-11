@@ -1,0 +1,52 @@
+Arguments: 
+  D:\node.js\node.exe C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add ejs
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_45\bin;C:\Program Files\Java\jdk1.8.0_45\jre\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;";C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files\Git\cmd;D:\";D:\node.js;C:\Go\bin;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;D:\AppServ\Apache2.2\bin;D:\AppServ\php5;D:\AppServ\MySQL\bin;D:\Microsoft VS Code\bin;C:\Users\asus\AppData\Roaming\npm;D:\node.js;C:\Users\asus\go\bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  13.12.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/_nodemailer: Not found
+      at Request.params.callback [as _callback] (C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66987:18)
+      at Request.self.callback (C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1201:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "email",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+      "_nodemailer@6.4.11@nodemailer": "^6.4.11",
+      "nodemailer": "^6.4.11"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
