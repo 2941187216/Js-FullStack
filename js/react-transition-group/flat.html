@@ -1,0 +1,58 @@
+<script>
+    // 数组拍平
+    let arr = [1, 2, [3, [4, [5]]]];
+    arr.push(arr);
+    // [1,2,3,4,5]
+    // function flat(arr) {
+    //     // todo
+    //     return arr.reduce((prev,cur)=>{
+    //         return prev.concat(Array.isArray(cur) ?  flat(cur) : cur)
+    // })
+    // }
+
+    // console.log(flat(arr))
+
+    // let c = []
+    // function flat(a) {
+    //     a.forEach((b) => {
+    //         if (typeof b === 'object') {
+    //             flat(b)
+    //         } else {
+    //             c.push(b)
+    //         }
+    //     })
+    //     return c
+    // }
+
+    // function flat(arr) {
+    //     let map = new Map();
+    //     a.forEach((b) => {
+    //         if (typeof b === 'object') {
+    //             map.set(b, )
+    //             flat(b)
+    //         } else {
+    //             c.push(b)
+    //         }
+    //     })
+    //     return c
+    // }
+    let map = new Map();
+    function flat(arr) {
+        let res = [];
+        if (map.get(arr)) return map.get(arr);
+        map.set(arr, res);
+        for (let item of arr) {
+            if (Array.isArray(item)) {
+                res.push(...flat(item))
+                // res = res.concat(flat(item))
+            } else {
+                res.push(item)
+            }
+        }
+        return res;
+    }
+    console.log(flat(arr))
+
+
+
+</script>
