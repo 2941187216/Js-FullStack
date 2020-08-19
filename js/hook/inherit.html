@@ -1,0 +1,60 @@
+<script>
+    function inherit(ParentConstrucor, prototypeObj) {
+        // 继承父类 属性
+        // 继承父类 方法
+        function Cat(name) {
+            // 继承属性 super()
+            ParentConstrucor.call(this, name);
+        }
+        Cat.prototype = prototypeObj;
+        // 继承方法
+        Object.setPrototypeOf(Cat.prototype, ParentConstrucor.prototype);
+        // Cat.prototype.__proto__ = ParentConstrucor.prototype
+        return Cat; 
+    }
+
+    let animalNum = 0;
+    function Animal(name) {
+        animalNum++;
+        this.name = name;
+    }
+    Animal.prototype.getName = function () {
+        return this.name;
+    };
+    const Cat = inherit(Animal, {
+        say: function () {
+            console.log(`NO${animalNum}:${this.getName()}`);
+        }
+    });
+    const cat1 = new Cat('小花');
+    console.log(cat1);
+    cat1.say(); // NO1:小花
+
+
+    function Foo() {
+        // this -> obj
+        this.a = 1; // obj.a = 1
+        this.b = 2; // obj.b = 2
+    }
+
+    Foo.prototype.getName = function() {
+        // 3
+        console.log(this.a)
+    }
+    let obj = {};
+    Foo.call(obj);
+    console.log(obj);
+
+    function Child() {
+        // 1
+        Foo.call(this); // this指向Child构造的实例
+    }
+    // 2
+    // Child.prototype.__proto__ = Foo.prototype;
+    Child.prototype = Object.create(Foo.prototype)
+    let c = new Child();
+
+    // let xxx = {}
+    // xxx.__proto__ = bbb;
+    // Object.create(bbb)
+</script>
