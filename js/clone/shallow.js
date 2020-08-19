@@ -13,6 +13,7 @@ oldobj = {
     c: { h: { i : 2}}
 }
 
+
 const newobj = shallow(oldobj);
 console.log(newobj.c.h, oldobj.c.h);
 console.log(newobj.c.h === oldobj.c.h);
