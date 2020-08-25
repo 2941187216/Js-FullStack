@@ -11,3 +11,5 @@
     interface ( username: string, password: string )
     type userLoginFunc api bool
     model user{ name, age, avatar, hobbies,... }
+
+    
