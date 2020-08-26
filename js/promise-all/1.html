@@ -1,0 +1,27 @@
+<script>
+    function createTask(ms) {
+        return () => {
+            console.log('start', ms);
+            return new Promise(r => setTimeout(() => {
+                console.log('end', ms);
+                r(ms);
+            }, ms));
+        }
+    }
+    const tasks = Array(5).fill(null).map((_, i) => createTask(i * 1000));
+    Promise.all(tasks.map(task => task())).then(console.log);
+
+    // 0
+    // 1000
+    // 2000
+    // 3000
+    // 4000
+
+    // 限流 2个在运行
+    // 等 0s
+    // 0
+    // 等 1s
+    // 1000
+    // 启动 settimeout 2000
+    // 手写一个promiseAll
+</script>
