@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    cdn
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <!-- 1. js 文件是个静态资源 http 1.0 text/js
+        image/png
+        text/html 
+        text/css 
+        动态资源  database 服务器压力 很大
+        TCP 连接 -> HTTP 请求、响应
+        连接上限  多线程 nginx 进程 启动 线程
+    
+    2. bootcdn.cn 动态 服务器上找数据的 分流
+        node 读mysql -> template
+        用户量和访问 量大后
+        nginx 负载均衡 proxy
+        分布式 主从
+        用户怎么会来？ ip => url
+        分流 
+    动态 ip -> 电脑 Mac地址 -->
+    <div id="root">
+        <div @click="changeData">切换数据</div>
+        <li v-for="item in list":key="item.id">{{item.text}}</li>
+    </div>
+    <script>
+        // MVVM 的范围
+        new Vue({
+            el: '#root',
+            data() {
+                return  {
+                    // diff
+                    list:[], // 数据 VNode diff -> DOM 更新
+                    list1:[],// oldState DOM 
+                    list2:[],// newState
+                    nowData: '',
+                    updateTime: ''
+                }
+            },
+            methods: {
+                changeData() {
+                    this.nowData = Date.now();
+                    this.list = this.list2;
+                }
+            },
+            created() {
+                for(let i = 0; i <= 10000; i++) {
+                    this.list1.push({
+                        id: i,
+                        text: i
+                    })
+
+                    this.list2.push({
+                        id: i * 2,
+                        text: 10000 - i
+                    })
+                }
+
+                this.list = this.list1;
+            },
+            updated() {
+                const data = Date.now();
+                console.log(`updateTime: ${date - this.nowData}`)
+            }
+
+
+        })
+    </script>
+</body>
+</html>
