@@ -1,0 +1,9 @@
+<script>
+    const originPush = Array.prototype.push;
+    Array.prototype.push = function () {
+        console.log('监听到了')
+        return originPush.apply(this);
+    }
+
+    
+</script>
